@@ -1,13 +1,16 @@
 package insyncwithfoo.revealtype
 
-import com.intellij.testFramework.fixtures.BasePlatformTestCase
+import com.intellij.testFramework.fixtures.CodeInsightTestFixture
+import com.jetbrains.python.fixtures.PyTestCase
 
 
-class RevealTypeInspectionTest : BasePlatformTestCase() {
+class RevealTypeInspectionTest : PyTestCase() {
     
-    private val fixture by ::myFixture
+    private val fixture: CodeInsightTestFixture
+        get() = myFixture!!
     
-    override fun getTestDataPath() = "src/test/testData"
+    override val testDataPath: String
+        get() = "src/test/testData"
     
     fun `test - basic`() {
         doTest("basic.py")
@@ -22,12 +25,10 @@ class RevealTypeInspectionTest : BasePlatformTestCase() {
     }
     
     private fun doTest(fileName: String) {
-        val (checkWarnings, checkInfos, checkWeakWarnings) = Triple(true, false, true)
-        
         fixture.configureByFile(fileName)
         
         fixture.enableInspections(RevealTypeInspection())
-        fixture.checkHighlighting(checkWarnings, checkInfos, checkWeakWarnings)
+        fixture.checkHighlighting()
     }
     
 }
