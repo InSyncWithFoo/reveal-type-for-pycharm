@@ -1,0 +1,24 @@
+<html lang="en">
+<body>
+	Displays the type of the expression
+	passed as argument to <code>reveal_type()</code>.
+	Also reports incorrect calls.
+	
+	<pre><code>
+a: str
+reveal_type(a)  # Revealed type is "str"
+
+# `reveal_type()` expects exactly one positional argument
+reveal_type()
+reveal_type(lorem = b'ipsum')
+reveal_type(42, foo = 'bar')
+</code></pre>
+	<!-- tooltip end -->
+	
+	<p>
+		The "severity" option has no effect.
+		The two types of subinspections are always reported as
+		weak warnings and warnings, correspondingly.
+	</p>
+</body>
+</html>
