@@ -20,7 +20,7 @@ via visual annotations.
 Wrap an arbitrary expression with a `reveal_type()` call
 to see its type as inferred by PyCharm.
 
-This plugin has no inferrence logic on its own.
+This plugin has no inference logic on its own.
 All calls to `reveal_type()` are recognized as directives,
 regardless of the fully qualified name.
 
@@ -33,7 +33,7 @@ You can download the ZIP files manually from [the <i>Releases</i> tab][3],
 and follow the instructions described [here][6].
 
 Currently supported versions:
-2024.1 (build 241.14494.241) - 2024.2.* (build 242.*).
+2024.1 (build 241.14494.241) and later.
 
 
 ## Credits
