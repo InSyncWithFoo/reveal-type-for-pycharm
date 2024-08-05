@@ -20,6 +20,10 @@ class RevealTypeInspectionTest : PyTestCase() {
         doTest("generics.py")
     }
     
+    fun `test - callables`() {
+        doTest("callables.py")
+    }
+    
     fun `test - invalid calls`() {
         doTest("invalid_calls.py")
     }
