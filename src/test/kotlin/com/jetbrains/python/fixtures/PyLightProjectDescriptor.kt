@@ -15,16 +15,21 @@ import com.jetbrains.python.psi.LanguageLevel
 // Copied from:
 // https://github.com/JetBrains/intellij-community/blob/eeb68d528244/python/testSrc/com/jetbrains/python/fixtures/PyLightProjectDescriptor.java#L26
 @Suppress("warnings")
-class PyLightProjectDescriptor private constructor(private val myName: String?, private val myLevel: LanguageLevel) :
-    LightProjectDescriptor() {
+class PyLightProjectDescriptor private constructor(
+    private val myName: String?,
+    private val myLevel: LanguageLevel
+) : LightProjectDescriptor() {
+    
     constructor(level: LanguageLevel) : this(null, level)
     
     constructor(name: String) : this(name, LanguageLevel.getLatest())
     
     override fun getSdk(): Sdk? {
-        return if (myName == null
-        ) create(myLevel, *additionalRoots)
-        else create(testDataPath + "/" + myName)
+        return if (myName == null) {
+            create(myLevel, *additionalRoots)
+        } else {
+            create(testDataPath + "/" + myName)
+        }
     }
     
     protected val additionalRoots: Array<VirtualFile>
@@ -36,8 +41,7 @@ class PyLightProjectDescriptor private constructor(private val myName: String?, 
     
     protected fun createLibrary(model: ModifiableRootModel, name: String?, path: String) {
         val modifiableModel = model.moduleLibraryTable.createLibrary(name).modifiableModel
-        val home =
-            LocalFileSystem.getInstance().refreshAndFindFileByPath(PathManager.getHomePath() + path)
+        val home = LocalFileSystem.getInstance().refreshAndFindFileByPath(PathManager.getHomePath() + path)
         
         modifiableModel.addRoot(home!!, OrderRootType.CLASSES)
         modifiableModel.commit()

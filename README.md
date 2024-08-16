@@ -11,10 +11,6 @@ See the type of an arbitrary expression as inferred by PyCharm
 via visual annotations.
 
 
-  [1]: https://typing.readthedocs.io/en/latest/spec/directives.html#reveal-type
-<!-- Plugin description end -->
-
-
 ## Usage
 
 Wrap an arbitrary expression with a `reveal_type()` call
@@ -23,6 +19,10 @@ to see its type as inferred by PyCharm.
 This plugin has no inference logic on its own.
 All calls to `reveal_type()` are recognized as directives,
 regardless of the fully qualified name.
+
+
+  [1]: https://typing.readthedocs.io/en/latest/spec/directives.html#reveal-type
+<!-- Plugin description end -->
 
 
 ## Installation
