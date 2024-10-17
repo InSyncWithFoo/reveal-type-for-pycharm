@@ -10,7 +10,6 @@ import com.jetbrains.python.inspections.PyInspectionVisitor
 import com.jetbrains.python.psi.PyCallExpression
 import com.jetbrains.python.psi.PyExpression
 import com.jetbrains.python.psi.PyKeywordArgument
-import com.jetbrains.python.psi.types.PyCollectionType
 import com.jetbrains.python.psi.types.TypeEvalContext
 
 
