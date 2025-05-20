@@ -1,5 +1,9 @@
 # `reveal_type()` support for PyCharm
 
+> [!NOTE]
+> This plugin is obsolete. `reveal_type()` is now natively supported.
+> See [PY-54559](https://youtrack.jetbrains.com/issue/PY-54559) for more information.
+
 [![Build](https://github.com/InSyncWithFoo/reveal-type-for-pycharm/actions/workflows/build.yaml/badge.svg)][2]
 
 ![](./.github/readme/demo.png)
